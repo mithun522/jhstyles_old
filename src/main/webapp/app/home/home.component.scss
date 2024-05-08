@@ -1,23 +1,31 @@
-/* ==========================================================================
-Main page styles
-========================================================================== */
-
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
-  background-size: contain;
+.hero-bg-container {
+  height: 80vh;
+  width: 100%;
+  margin: 0;
+  background-image: url(../../content/images/landingPageImages/background.jpg);
+  background-size: cover;
+  padding: 4% 20% 4% 20%;
+  text-align: start;
 }
 
-/* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (-moz-min-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-  .hipster {
-    background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
-    background-size: contain;
-  }
+.testimonial-card {
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.testimonial-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.testimonial-card .card-body {
+  text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: black; /* Set the color of the arrows to black */
+  font-size: 2rem; /* Set the font size of the arrows */
 }
