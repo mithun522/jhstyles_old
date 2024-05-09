@@ -7,6 +7,7 @@ import NavbarComponent from './layouts/navbar/navbar.component';
 import LoginComponent from './login/login.component';
 import RegisterComponent from './account/register/register.component';
 import { LandingComponent } from './landing/landing.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
     },
     canActivate: [UserRouteAccessService],
     loadChildren: () => import('./admin/admin.routes'),
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
   },
   {
     path: 'account',
