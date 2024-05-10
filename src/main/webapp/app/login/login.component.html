@@ -2,11 +2,11 @@
   <div class="d-flex align-items-center justify-content-center mb-4">
     <img src="../../content/images/byclogo.png" class="logo img-fluid mr-2 mb-2 mb-md-0" alt="Logo" style="width: 10%" />
     <h1 data-cy="loginTitle" jhiTranslate="login.title" class="text-dark mb-0 text-dark fs-2 fw-bold" style="margin-left: 5%">Sign In</h1>
-    <!-- @if (authenticationError()) {
+    @if (authenticationError()) {
       <div class="alert alert-danger" data-cy="loginError" jhiTranslate="login.messages.error.authentication">
         <strong>Failed to sign in!</strong> Please check your credentials and try again.
       </div>
-    } -->
+    }
   </div>
   <div class="login-form rounded p-4">
     <form class="form" (ngSubmit)="login()" [formGroup]="loginForm">
