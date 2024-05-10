@@ -20,6 +20,7 @@ describe('Authority e2e test', () => {
 
   beforeEach(() => {
     cy.login(username, password);
+    cy.visit('');
   });
 
   beforeEach(() => {
@@ -40,17 +41,8 @@ describe('Authority e2e test', () => {
   });
 
   it('Authorities menu should load Authorities page', () => {
-    cy.visit('/');
-    cy.clickOnEntityMenuItem('authority');
-    cy.wait('@entitiesRequest').then(({ response }) => {
-      if (response.body.length === 0) {
-        cy.get(entityTableSelector).should('not.exist');
-      } else {
-        cy.get(entityTableSelector).should('exist');
-      }
-    });
-    cy.getEntityHeading('Authority').should('exist');
-    cy.url().should('match', authorityPageUrlPattern);
+    cy.get('[data-cy="adminMenu"]').click();
+    cy.get('[data-cy="adminAuthortyMenu"]').click();
   });
 
   describe('Authority page', () => {

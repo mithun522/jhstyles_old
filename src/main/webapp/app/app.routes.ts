@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'account',
     loadChildren: () => import('./account/account.route'),
   },
+  {
+    path: '',
+    loadChildren: () => import(`./entities/entity.routes`),
+  },
   ...errorRoute,
 ];
 
