@@ -6,15 +6,15 @@ import HomeComponent from './home/home.component';
 import NavbarComponent from './layouts/navbar/navbar.component';
 import LoginComponent from './login/login.component';
 import RegisterComponent from './account/register/register.component';
-import { LandingComponent } from './landing/landing.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { GetStartedComponent } from './get-started/get-started.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     children: [
-      { path: '', component: LandingComponent, pathMatch: 'full' }, // Redirect to login by default
+      { path: '', component: GetStartedComponent, pathMatch: 'full' }, // Redirect to login by default
       { path: 'login', component: LoginComponent, data: { title: 'Login' } }, // Login component route
       { path: 'register', component: RegisterComponent, data: { title: 'Register' } }, // Register component route
     ],
