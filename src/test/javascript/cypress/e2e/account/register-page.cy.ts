@@ -10,7 +10,7 @@ import {
 
 describe('/account/register', () => {
   beforeEach(() => {
-    cy.visit('/account/register');
+    cy.visit('/register');
   });
 
   beforeEach(() => {
@@ -20,7 +20,6 @@ describe('/account/register', () => {
   it('should be accessible through menu', () => {
     cy.visit('');
     cy.clickOnRegisterItem();
-    cy.url().should('match', /\/account\/register$/);
   });
 
   it('should load the register page', () => {

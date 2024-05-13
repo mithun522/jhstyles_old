@@ -80,7 +80,7 @@ describe('LoginComponent', () => {
       comp.ngOnInit();
 
       // THEN
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['']);
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/']);
     });
   });
 
@@ -121,7 +121,7 @@ describe('LoginComponent', () => {
       // THEN
       expect(comp.authenticationError()).toEqual(false);
       expect(mockLoginService.login).toHaveBeenCalledWith(credentials);
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['']);
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/dashboard']);
     });
 
     it('should authenticate the user but not navigate to home page if authentication process is already routing to cached url from localstorage', () => {

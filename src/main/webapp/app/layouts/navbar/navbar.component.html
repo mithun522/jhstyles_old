@@ -1,9 +1,7 @@
-<nav data-cy="navbar" class="navbar navbar-dark navbar-expand-md bg-dark">
-  <div class="container-fluid">
+<nav data-cy="navbar" class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container">
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
-      <span class="logo-img"></span>
-      <span class="navbar-title" jhiTranslate="global.title">Jhstyles</span>
-      <span class="navbar-version">{{ version }}</span>
+      <img src="../../../content/images/landingPageImages/logo.png" alt="logo" />
     </a>
     <a
       class="navbar-toggler d-lg-none"
@@ -69,6 +67,7 @@
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 (click)="collapseNavbar()"
+                data-cy="adminAuthortyMenu"
               >
                 <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
                 <span jhiTranslate="global.menu.entities.adminAuthority">Authority</span>
@@ -205,13 +204,7 @@
                 </a>
               </li>
               <li>
-                <a
-                  class="dropdown-item"
-                  routerLink="/account/register"
-                  routerLinkActive="active"
-                  (click)="collapseNavbar()"
-                  data-cy="register"
-                >
+                <a class="dropdown-item" routerLink="/register" routerLinkActive="active" (click)="collapseNavbar()" data-cy="register">
                   <fa-icon icon="user-plus" [fixedWidth]="true"></fa-icon>
                   <span jhiTranslate="global.menu.account.register">Register</span>
                 </a>

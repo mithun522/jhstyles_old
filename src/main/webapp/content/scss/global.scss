@@ -69,12 +69,6 @@ Generic styles
 
 /* other generic styles */
 
-.jh-card {
-  padding: 1.5%;
-  margin-top: 20px;
-  border: none;
-}
-
 .error {
   color: white;
   background-color: red;
@@ -113,6 +107,29 @@ Generic styles
 .hand,
 [jhisortby] {
   cursor: pointer;
+}
+
+/* ==========================================================================
+user management styles
+========================================================================== */
+.status-button,
+.inactive-status-button {
+  border: none;
+  border-radius: 15px;
+}
+
+.table-sorting th fa-icon {
+  color: gray;
+}
+
+.action-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.jh-create-entity,
+.jh-refresh-entity {
+  border-radius: 40px;
 }
 
 /* ==========================================================================
@@ -237,3 +254,47 @@ angular-cli removes postcss-rtl processed inline css, processed rules must be ad
   }
 }
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+/* Custom global jhi-styles */
+.xtra-large-text {
+  font-size: 3.1rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .xtra-large-text {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .xtra-large-text {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .xtra-large-text {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .xtra-large-text {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .xtra-large-text {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}

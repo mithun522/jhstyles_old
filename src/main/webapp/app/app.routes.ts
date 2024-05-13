@@ -1,18 +1,23 @@
 import { Routes } from '@angular/router';
-
 import { Authority } from 'app/config/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
 import { errorRoute } from './layouts/error/error.route';
-
 import HomeComponent from './home/home.component';
 import NavbarComponent from './layouts/navbar/navbar.component';
 import LoginComponent from './login/login.component';
+import RegisterComponent from './account/register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GetStartedComponent } from './get-started/get-started.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'home.title',
+    children: [
+      { path: '', component: GetStartedComponent, pathMatch: 'full' }, // Redirect to login by default
+      { path: 'login', component: LoginComponent, data: { title: 'Login' } }, // Login component route
+      { path: 'register', component: RegisterComponent, data: { title: 'Register' } }, // Register component route
+    ],
   },
   {
     path: '',
@@ -28,13 +33,12 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.routes'),
   },
   {
-    path: 'account',
-    loadChildren: () => import('./account/account.route'),
+    path: 'dashboard',
+    component: DashboardComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent,
-    title: 'login.title',
+    path: 'account',
+    loadChildren: () => import('./account/account.route'),
   },
   {
     path: '',
