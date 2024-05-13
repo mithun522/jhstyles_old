@@ -1,7 +1,7 @@
 {
   "userManagement": {
     "home": {
-      "title": "Օգտվողներ",
+      "title": "Օգտագործողի կառավարում",
       "refreshListLabel": "Refresh list",
       "createLabel": "Ստեղծել նոր օգտվող",
       "createOrEditLabel": "Ստեղծել կամ խմբագրել օգտվողին"

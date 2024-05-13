@@ -110,6 +110,29 @@ Generic styles
 }
 
 /* ==========================================================================
+user management styles
+========================================================================== */
+.status-button,
+.inactive-status-button {
+  border: none;
+  border-radius: 15px;
+}
+
+.table-sorting th fa-icon {
+  color: gray;
+}
+
+.action-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.jh-create-entity,
+.jh-refresh-entity {
+  border-radius: 40px;
+}
+
+/* ==========================================================================
 Custom alerts for notification
 ========================================================================== */
 .alerts {

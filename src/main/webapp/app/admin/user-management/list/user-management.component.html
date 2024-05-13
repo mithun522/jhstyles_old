@@ -1,7 +1,12 @@
 <div class="p-4 mt-5">
   <div class="row">
     <div class="col mt-3">
-      <h3 class="fw-bold text-start text-md-center" id="user-management-page-heading" data-cy="userManagementPageHeading">
+      <h3
+        class="fw-bold text-start text-md-center"
+        id="user-management-page-heading"
+        data-cy="userManagementPageHeading"
+        jhiTranslate="userManagement.home.title"
+      >
         User Management
       </h3>
     </div>
@@ -92,8 +97,10 @@
                       <span class="p-2 bg-info rounded-circle d-inline-block me-2"></span>
                     } @else if (authority === 'ROLE_ADMIN') {
                       <span class="p-2 bg-warning rounded-circle d-inline-block me-2"></span>
+                    } @else {
+                      <span class="p-2 bg-primary rounded-circle d-inline-block me-2"></span>
                     }
-                    <span>{{ authority }}</span>
+                    <span>{{ authority.replace('_', ' ') }}</span>
                   </div>
                 }
               </td>

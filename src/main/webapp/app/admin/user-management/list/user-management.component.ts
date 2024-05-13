@@ -19,7 +19,6 @@ import UserManagementDeleteDialogComponent from '../delete/user-management-delet
   selector: 'jhi-user-mgmt',
   templateUrl: './user-management.component.html',
   imports: [RouterModule, SharedModule, UserManagementDeleteDialogComponent, SortDirective, SortByDirective, ItemCountComponent],
-  styleUrls: ['./user-management.component.scss'],
 })
 export default class UserManagementComponent implements OnInit {
   currentAccount = inject(AccountService).trackCurrentAccount();
