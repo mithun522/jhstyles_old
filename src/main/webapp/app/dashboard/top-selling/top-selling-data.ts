@@ -10,7 +10,7 @@ export interface Product {
 
 export const TopSelling: Product[] = [
   {
-    image: '../../content/images/users/user1.jpg',
+    image: '../../content/images/users/user1.png',
     uname: 'Hanna Gover',
     gmail: 'hgover@gmail.com',
     productName: 'Flexy React',
@@ -19,7 +19,7 @@ export const TopSelling: Product[] = [
     budget: '95K',
   },
   {
-    image: '../../content/images/users/user2.jpg',
+    image: '../../content/images/users/user2.png',
     uname: 'Hanna Gover',
     gmail: 'hgover@gmail.com',
     productName: 'Landing pro React',
@@ -28,7 +28,7 @@ export const TopSelling: Product[] = [
     budget: '95K',
   },
   {
-    image: '../../content/images/users/user3.jpg',
+    image: '../../content/images/users/user3.png',
     uname: 'Hanna Gover',
     gmail: 'hgover@gmail.com',
     productName: 'Elite React	',
@@ -37,7 +37,7 @@ export const TopSelling: Product[] = [
     budget: '95K',
   },
   {
-    image: '../../content/images/users/user4.jpg',
+    image: '../../content/images/users/user4.png',
     uname: 'Hanna Gover',
     gmail: 'hgover@gmail.com',
     productName: 'Ample React',
