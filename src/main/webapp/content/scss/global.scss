@@ -290,11 +290,18 @@ angular-cli removes postcss-rtl processed inline css, processed rules must be ad
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
+  .settings-card-container {
+    margin-top: 5%;
+  }
 }
 
 @media (max-width: 576px) {
   .xtra-large-text {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+  }
+
+  .settings-card-container {
+    margin-top: 5%;
   }
 }

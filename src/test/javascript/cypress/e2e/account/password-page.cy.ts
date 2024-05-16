@@ -7,13 +7,13 @@ import {
   classValid,
 } from '../../support/commands';
 
-describe('/account/password', () => {
+describe('/profile/password', () => {
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
 
   beforeEach(() => {
     cy.login(username, password);
-    cy.visit('/account/password');
+    cy.visit('account/profile/password');
   });
 
   beforeEach(() => {
@@ -23,7 +23,7 @@ describe('/account/password', () => {
   it('should be accessible through menu', () => {
     cy.visit('');
     cy.clickOnPasswordItem();
-    cy.url().should('match', /\/account\/password$/);
+    cy.url().should('match', /\/profile\/password$/);
   });
 
   it('requires current password', () => {

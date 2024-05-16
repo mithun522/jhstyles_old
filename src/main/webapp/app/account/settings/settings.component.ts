@@ -6,13 +6,15 @@ import SharedModule from 'app/shared/shared.module';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
 import { LANGUAGES } from 'app/config/language.constants';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import PasswordComponent from '../password/password.component';
 
 const initialAccount: Account = {} as Account;
 
 @Component({
   standalone: true,
   selector: 'jhi-settings',
-  imports: [SharedModule, FormsModule, ReactiveFormsModule],
+  imports: [SharedModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterLink, PasswordComponent],
   templateUrl: './settings.component.html',
 })
 export default class SettingsComponent implements OnInit {

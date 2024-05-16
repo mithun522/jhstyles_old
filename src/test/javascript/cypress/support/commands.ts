@@ -22,8 +22,7 @@ export const navbarSelector = '[data-cy="navbar"]';
 export const adminMenuSelector = '[data-cy="adminMenu"]';
 export const accountMenuSelector = '[data-cy="accountMenu"]';
 export const registerItemSelector = '[data-cy="register"]';
-export const settingsItemSelector = '[data-cy="settings"]';
-export const passwordItemSelector = '[data-cy="passwordItem"]';
+export const profileItemSelector = '[data-cy="profile"]';
 export const loginItemSelector = '[data-cy="login"]';
 export const logoutItemSelector = '[data-cy="logout"]';
 export const entityItemSelector = '[data-cy="entity"]';
@@ -43,6 +42,10 @@ export const emailRegisterSelector = '[data-cy="email"]';
 export const firstPasswordRegisterSelector = '[data-cy="firstPassword"]';
 export const secondPasswordRegisterSelector = '[data-cy="secondPassword"]';
 export const submitRegisterSelector = '[data-cy="submit"]';
+
+// Profile
+export const profilePageSelector = '[data-cy="profilePageLink"]';
+export const passwordPageSelector = '[data-cy="passwordPageLink"]';
 
 // Settings
 export const firstNameSettingsSelector = '[data-cy="firstname"]';

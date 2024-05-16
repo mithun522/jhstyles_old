@@ -1,0 +1,55 @@
+<div class="container py-3 mb-3">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 mb-4">
+      <div class="d-flex position-relative justify-content-center">
+        <img
+          id="profile-pic"
+          [src]="imageUrl ? imageUrl : 'https://via.placeholder.com/150'"
+          class="img-fluid img-thumbnail mb-3 border rounded-circle"
+          alt="Profile Picture"
+        />
+        <button class="btn btn-info rounded-circle position-absolute bottom-0 start-50">
+          <label for="actual-btn" class="m-0"><fa-icon icon="plus"></fa-icon></label>
+        </button>
+        <input id="actual-btn" type="file" accept="image/x-png, image/jpeg" hidden />
+      </div>
+
+      <div>
+        <!-- <h5 class="text-center">{{ profileData.firstName }} {{ profileData.lastName }}</h5> -->
+        <!-- <p class="text-center text-muted">{{ profileData.email }}</p> -->
+      </div>
+
+      <div class="bg-light mt-3">
+        <ul class="flex-md-column navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link pl-0 fw-bold text-dark text-center mt-2"
+              routerLink="/account/profile/settings"
+              data-cy="profilePageLink"
+              jhiTranslate="profile.settings.page"
+              >Profile Settings</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link pl-0 fw-bold text-dark text-center mb-2"
+              routerLink="/account/profile/password"
+              data-cy="passwordPageLink"
+              jhiTranslate="profile.password.page"
+              >Change Password</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-9 settings-card-container">
+      <div class="card min-vh-75 shadow">
+        <div class="card-body bg-light">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

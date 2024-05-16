@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-namespace */
+/*eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 
 import {
@@ -8,9 +8,9 @@ import {
   registerItemSelector,
   loginItemSelector,
   logoutItemSelector,
-  settingsItemSelector,
-  passwordItemSelector,
   entityItemSelector,
+  profileItemSelector,
+  passwordPageSelector,
 } from './commands';
 
 Cypress.Commands.add('clickOnLoginItem', () => {
@@ -28,14 +28,15 @@ Cypress.Commands.add('clickOnRegisterItem', () => {
   return cy.get(navbarSelector).get(accountMenuSelector).get(registerItemSelector).click();
 });
 
-Cypress.Commands.add('clickOnSettingsItem', () => {
+Cypress.Commands.add('clickOnProfileItem', () => {
   cy.get(navbarSelector).get(accountMenuSelector).click();
-  return cy.get(navbarSelector).get(accountMenuSelector).get(settingsItemSelector).click();
+  return cy.get(navbarSelector).get(accountMenuSelector).get(profileItemSelector).click();
 });
 
 Cypress.Commands.add('clickOnPasswordItem', () => {
   cy.get(navbarSelector).get(accountMenuSelector).click();
-  return cy.get(navbarSelector).get(accountMenuSelector).get(passwordItemSelector).click();
+  cy.get(navbarSelector).get(accountMenuSelector).get(profileItemSelector).click();
+  return cy.get(passwordPageSelector).click();
 });
 
 Cypress.Commands.add('clickOnAdminMenuItem', (item: string) => {
@@ -54,7 +55,7 @@ declare global {
       clickOnLoginItem(): Cypress.Chainable;
       clickOnLogoutItem(): Cypress.Chainable;
       clickOnRegisterItem(): Cypress.Chainable;
-      clickOnSettingsItem(): Cypress.Chainable;
+      clickOnProfileItem(): Cypress.Chainable;
       clickOnPasswordItem(): Cypress.Chainable;
       clickOnAdminMenuItem(item: string): Cypress.Chainable;
       clickOnEntityMenuItem(entityName: string): Cypress.Chainable;

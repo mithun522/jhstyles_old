@@ -1,7 +1,7 @@
 import { firstNameSettingsSelector, lastNameSettingsSelector, submitSettingsSelector, emailSettingsSelector } from '../../support/commands';
 import type { Account } from '../../support/account';
 
-describe('/account/settings', () => {
+describe('/profile/settings', () => {
   const adminUsername = Cypress.env('E2E_USERNAME') ?? 'admin';
   const adminPassword = Cypress.env('E2E_PASSWORD') ?? 'admin';
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
@@ -25,7 +25,7 @@ describe('/account/settings', () => {
 
   beforeEach(() => {
     cy.login(username, password);
-    cy.visit('/account/settings');
+    cy.visit('account/profile/settings');
     cy.get(emailSettingsSelector).should('have.value', testUserEmail);
 
     cy.intercept('POST', '/api/account').as('settingsSave');
@@ -43,8 +43,8 @@ describe('/account/settings', () => {
 
   it('should be accessible through menu', () => {
     cy.visit('');
-    cy.clickOnSettingsItem();
-    cy.url().should('match', /\/account\/settings$/);
+    cy.clickOnProfileItem();
+    cy.url().should('match', /\/profile\/settings$/);
   });
 
   it("should be able to change 'user' firstname settings", () => {

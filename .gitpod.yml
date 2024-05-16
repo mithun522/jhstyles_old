@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  # Getting Eclipse ready for use
+  - name: Setup environment
+    init: |
+      tar -xvf $HOME/eclipse-jee-2022-03-R-linux-gtk-x86_64.tar.gz --directory /workspace
+
+  - name: run backend
+    command: ./mvnw clean && ./mvnw
+
+  - name: run frontend
+    before: nvm i lts/hydrogen && npm link @angular/cli
+    command: npm start
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
+    - VMware.vscode-boot-dev-pack
+    - eamodio.gitlens
+    - dbaeumer.vscode-eslint
+    - manuth.eslint-language-service
+    - rvest.vs-code-prettier-eslint
+    - rvest.vs-code-prettier-eslint
+    - ZixuanChen.vitest-explorer
