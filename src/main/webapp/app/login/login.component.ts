@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import SharedModule from 'app/shared/shared.module';
 import { LoginService } from 'app/login/login.service';
 import { AccountService } from 'app/core/auth/account.service';
+import introJs from 'intro.js';
 
 @Component({
   standalone: true,
@@ -15,6 +16,8 @@ import { AccountService } from 'app/core/auth/account.service';
 export default class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('username', { static: false })
   username!: ElementRef;
+
+  introJS = introJs();
 
   authenticationError = signal(false);
 
@@ -38,7 +41,28 @@ export default class LoginComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.username.nativeElement.focus();
+    const usernameElement = document.querySelector('[data-intro="username"]');
+    if (usernameElement instanceof HTMLElement) {
+      this.introJS.setOptions({
+        steps: [
+          {
+            element: usernameElement,
+            title: 'Welcome',
+            intro: 'This is the username input box',
+          },
+        ],
+      });
+
+      // Start the introduction
+      this.introJS.start();
+
+      // Focus on the username input field after the intro finishes
+      this.introJS.oncomplete(() => {
+        this.username.nativeElement.focus();
+      });
+    } else {
+      console.error('Username element not found or is not an HTMLElement.');
+    }
   }
 
   login(): void {
