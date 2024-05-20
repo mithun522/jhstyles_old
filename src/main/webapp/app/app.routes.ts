@@ -15,8 +15,6 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', component: GetStartedComponent, pathMatch: 'full' }, // Redirect to login by default
-      { path: 'login', component: LoginComponent, data: { title: 'Login' } }, // Login component route
-      { path: 'register', component: RegisterComponent, data: { title: 'Register' } }, // Register component route
     ],
   },
   {

@@ -10,7 +10,7 @@ import {
 
 describe('/account/register', () => {
   beforeEach(() => {
-    cy.visit('/register');
+    cy.visit('/account/register');
   });
 
   beforeEach(() => {

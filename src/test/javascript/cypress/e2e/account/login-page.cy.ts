@@ -24,7 +24,7 @@ describe('login modal', () => {
   });
 
   it('greets visiting /login directly', () => {
-    cy.visit('/login');
+    cy.visit('account/login');
     cy.get(titleLoginSelector).should('be.visible');
   });
 

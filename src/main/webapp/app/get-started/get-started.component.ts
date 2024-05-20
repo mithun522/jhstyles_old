@@ -12,6 +12,6 @@ export class GetStartedComponent {
   private router = inject(Router);
 
   navigateToSignIn(): void {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/account/login']);
   }
 }
